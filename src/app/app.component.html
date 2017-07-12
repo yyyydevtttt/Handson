@@ -1,29 +1,6 @@
-<!-- ngModel -->
-<!-- 両方向バインド -->
-<input type="text" [(ngModel)]="hoge2">
-<span>{{hoge2}}</span>
-<br>
-<!-- 片方向バインド -->
-<input type="text" [(ngModel)]="hoge3">
-<input [value]="hoge3">
-<br>
-
-<!-- ngIf -->
-<input type="text" [(ngModel)]="hoge1" required>
-<span *ngIf="hoge1==='1'">1が入力されました<span>
-
-<!-- ngFor -->
+<h1>Issue Tracker</h1>
 <ul>
-  <li *ngFor="let data of demoData">{{data.name}} - {{data.age}}</li>
+  <li><a routerLink="home">Home</a></li>
+  <li><a routerLink="pages">Pages</a></li>
 </ul>
-
-
-<!-- ng-invalid と ng-dirty -->
-<form #f="ngForm" novalidate>
-  <input type="text" name="hoge" ngModel required>
-  <!--<p [hidden]="!f.form.dirty || f.form.valid">必須入力です</p>-->
-  <p>必須入力です</p>
-</form>
-
-
-
+<router-outlet></router-outlet>
